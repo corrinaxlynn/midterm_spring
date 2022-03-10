@@ -20,10 +20,13 @@ jobs:
               sudo pip install -r requirements.txt
               python3 DumpsterDiver.py -p /home/circleci/spring-rest-helloworld --min-key 40 --max-key 40 --entropy 4.3
               echo "installing pip and running DumpsterDiver"
-          name: "dumpster diver"  
+              sudo apt-get install wget apt-transport-https gnupg lsb-release
+              wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+              echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
               sudo apt-get update
               sudo apt-get install trivy
-              trivy image [dompkowc/midterm_spring:0.1.0-4b5a426-20]
+              trivy image dompkowc/midterm_spring:0.1.0-4b5a426-20
+          name: "dumpster diver"  
 
 
       - setup_remote_docker
