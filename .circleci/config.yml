@@ -7,6 +7,13 @@ jobs:
         image: "circleci/openjdk:8-jdk-browsers"
     steps: 
       - checkout
+          command: | 
+               apt install python-pip run
+              echo "installing pip and running DumpsterDiver"
+              ...
+          name: "dumpster diver"
+
+
       - setup_remote_docker
       - 
         restore_cache: 
