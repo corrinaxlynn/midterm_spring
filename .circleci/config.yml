@@ -10,6 +10,7 @@ jobs:
     steps: 
       - checkout
       - snyk/scan
+      -  
         run: 
           command: | 
               sudo apt-get update
