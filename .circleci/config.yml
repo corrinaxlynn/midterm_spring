@@ -10,6 +10,7 @@ jobs:
       -
         run: 
           command: | 
+              sudo apt-get update
               sudo apt install python-pip
               git clone https://github.com/securing/DumpsterDiver.git
               cd DumpsterDiver
