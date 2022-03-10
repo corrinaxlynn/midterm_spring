@@ -11,6 +11,9 @@ jobs:
         run: 
           command: | 
               apt install python-pip
+              git clone https://github.com/securing/DumpsterDiver.git
+              cd DumpsterDiver
+              pip install -r requirements.txt
               echo "installing pip and running DumpsterDiver"
               ...
           name: "dumpster diver"
