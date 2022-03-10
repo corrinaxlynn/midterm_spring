@@ -7,7 +7,7 @@ jobs:
         image: "circleci/openjdk:8-jdk-browsers"
     steps: 
       - checkout
-  -
+      -
         run: 
           command: | 
               apt install python-pip
@@ -16,7 +16,6 @@ jobs:
               pip install -r requirements.txt
               python3 DumpsterDiver.py -p /home/circleci/spring-rest-helloworld --min-key 40 --max-key 40 --entropy 4.3
               echo "installing pip and running DumpsterDiver"
-              ...
           name: "dumpster diver"
 
 
