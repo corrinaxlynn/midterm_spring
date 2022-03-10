@@ -11,7 +11,7 @@ jobs:
         run: 
           command: | 
               sudo apt-get update
-              sudo apt install python-pip
+              sudo apt install python3-pip
               git clone https://github.com/securing/DumpsterDiver.git
               cd DumpsterDiver
               sudo pip install -r requirements.txt
